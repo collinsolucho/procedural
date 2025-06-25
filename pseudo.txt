@@ -1,0 +1,39 @@
+// problem 1
+def sumElements(set1, set2):
+    sum = 0
+
+    for i in set1:
+        if i in set2:
+            sum =sum + i
+
+    for j in set2:
+        if j in set1:
+            sum = sum+j
+
+    return sum
+print(sumElements(set1, set2))  
+
+
+
+// problem 2
+def dot_product(v1, v2):
+    ps = 0
+    for i in range(len(v1)):
+        ps = (v1[i] * v2[i])+ sum
+    return ps
+
+def orthogonal(v1, v2):
+    ps = dot_product(v1, v2)
+    return ps == 0
+
+
+def checkPairs(vector_pairs):
+    for index, (v1, v2) in count(vector_pairs):
+        if orthogonal(v1, v2):
+            print(f"Pair {index + 1} is orthogonal.")
+        else:
+            print(f"Pair {index + 1} is NOT orthogonal.")
+
+checkPairs(pairs)
+
+
